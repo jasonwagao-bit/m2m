@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.jasonwagao/xuanxue-bazi-matching",
-  "description": "Chinese BaZi (八字) compatibility analysis between two birth charts. Returns 0-100 compatibility score, five-elements balance, narrative, strengths, challenges, and recommendations. Rule-based, sub-200ms. Pay-per-call $0.02 USDC via x402 on Base.",
+  "description": "Deterministic Chinese metaphysics APIs for AI agents. Rule-based BaZi (八字) compatibility + daily fortune — no LLM drift, sub-200ms, x402 payable on Base.",
   "repository": {
     "url": "https://github.com/jasonwagao/m2m",
     "source": "github"
@@ -18,19 +18,30 @@
       "environmentVariables": [
         {
           "name": "XUANXUE_PAYMENT_TOKEN",
-          "description": "x402 payment token for pay-per-call billing ($0.02 USDC on Base). Omit to receive 402 Payment Required challenges.",
+          "description": "x402 payment token for pay-per-call billing ($0.02 matching / $0.005 daily-fortune, USDC on Base). Omit to receive 402 Payment Required challenges.",
           "isRequired": false,
           "isSecret": true,
           "format": "string"
         },
         {
           "name": "XUANXUE_API_BASE",
-          "description": "Override API base URL. Defaults to https://api.xuanxue.app",
+          "description": "Override API base URL. Defaults to https://api.decodeyourming.com",
           "isRequired": false,
           "isSecret": false,
           "format": "string"
         }
       ]
     }
-  ]
+  ],
+  "tools": [
+    {
+      "name": "marriage_compatibility_check",
+      "description": "Deterministic marriage compatibility analysis. Rule-based BaZi between two birth charts. Returns 0-100 score, five-elements balance, strengths, challenges, recommendations. No LLM drift. x402/USDC Base. $0.02/call."
+    },
+    {
+      "name": "bazi_daily_fortune",
+      "description": "Deterministic daily fortune analysis. Rule-based BaZi day-flow. Returns 0-100 luck score, dominant element, favorable/unfavorable activities, timing advice. No LLM drift. x402/USDC Base. $0.005/call."
+    }
+  ],
+  "keywords": ["bazi", "eight-characters", "marriage-compatibility", "daily-fortune", "chinese-metaphysics", "deterministic", "x402", "agents", "matchmaking"]
 }
