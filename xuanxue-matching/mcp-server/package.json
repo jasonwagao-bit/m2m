@@ -1,0 +1,21 @@
+{
+  "name": "xuanxue-bazi-matching",
+  "version": "0.1.0",
+  "description": "MCP server exposing Chinese BaZi (八字) compatibility analysis between two birth charts",
+  "type": "module",
+  "bin": {"xuanxue-bazi-matching": "dist/index.js"},
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "typescript": "^5.4"
+  },
+  "license": "MIT",
+  "author": "xuanxue.app <oslovtech@gmail.com>",
+  "repository": {"type":"git","url":"https://github.com/jasonwagao/m2m"}
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.jasonwagao/xuanxue-bazi-matching",
+  "description": "Chinese BaZi (八字) compatibility analysis between two birth charts. Returns 0-100 compatibility score, five-elements balance, narrative, strengths, challenges, and recommendations. Rule-based, sub-200ms. Pay-per-call $0.02 USDC via x402 on Base.",
+  "repository": {
+    "url": "https://github.com/jasonwagao/m2m",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "xuanxue-bazi-matching",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "XUANXUE_PAYMENT_TOKEN",
+          "description": "x402 payment token for pay-per-call billing ($0.02 USDC on Base). Omit to receive 402 Payment Required challenges.",
+          "isRequired": false,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "XUANXUE_API_BASE",
+          "description": "Override API base URL. Defaults to https://api.xuanxue.app",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}
